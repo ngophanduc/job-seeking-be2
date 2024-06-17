@@ -9,6 +9,7 @@ import com.jobseeking.jobseekingbe.dto.response.AuthenticationResponse;
 import com.jobseeking.jobseekingbe.dto.response.UserDTO;
 import com.jobseeking.jobseekingbe.entity.Employer;
 import com.jobseeking.jobseekingbe.entity.User;
+import com.jobseeking.jobseekingbe.service.EmailService;
 import com.jobseeking.jobseekingbe.service.imp.AuthenticationServiceImp;
 import com.jobseeking.jobseekingbe.service.imp.EmployerServiceImp;
 import com.jobseeking.jobseekingbe.service.imp.UserServiceImp;
@@ -18,6 +19,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 //import lombok.var;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +32,9 @@ import java.text.ParseException;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 public class UserController {
-
+    @Autowired
     UserServiceImp userServiceImp;
+
     AuthenticationServiceImp authenticationServiceImp;
 
     @PostMapping()
