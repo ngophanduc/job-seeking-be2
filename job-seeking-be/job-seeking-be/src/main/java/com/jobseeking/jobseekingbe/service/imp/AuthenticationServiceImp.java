@@ -5,9 +5,7 @@ import com.jobseeking.jobseekingbe.dto.request.ChangePasswordRequest;
 import com.jobseeking.jobseekingbe.dto.request.IntrospectRequest;
 import com.jobseeking.jobseekingbe.dto.request.UserCreationRequest;
 import com.jobseeking.jobseekingbe.dto.response.AuthenticationResponse;
-import com.jobseeking.jobseekingbe.dto.response.ChangePasswordResponse;
 import com.jobseeking.jobseekingbe.dto.response.IntrospectResponse;
-import com.jobseeking.jobseekingbe.entity.User;
 import com.nimbusds.jose.JOSEException;
 
 import java.text.ParseException;

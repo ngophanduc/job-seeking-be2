@@ -2,7 +2,6 @@ package com.jobseeking.jobseekingbe.entity.keys;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Id;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

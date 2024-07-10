@@ -1,6 +1,5 @@
 package com.jobseeking.jobseekingbe.entity;
 
-import com.jobseeking.jobseekingbe.entity.keys.KeyPostLevel;
 import com.jobseeking.jobseekingbe.entity.keys.KeyPostType;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;

@@ -32,4 +32,4 @@ spring:
 jwt:
   signerKey: "LHdv9EVi3BKZeBHVBzqPE35+0PzgIPPlEkDa+8WSugOj+QAXKDO3DfjPDhSYmkjN"
 main:
-    allow-circular-references: true
+  allow-circular-references: true

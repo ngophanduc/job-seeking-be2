@@ -1,24 +1,17 @@
 package com.jobseeking.jobseekingbe.controller;
 
-import com.jobseeking.jobseekingbe.entity.Employer;
-import com.jobseeking.jobseekingbe.service.EmployerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
+@CrossOrigin
 @RestController
-@RequestMapping("/api/employers")
+@RequestMapping("/employer")
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@RequiredArgsConstructor
 public class EmployerController {
 
-    @Autowired
-    private EmployerService employerService;
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Employer> updateEmployer(@PathVariable String id, @RequestBody Employer updatedEmployer) {
-        Optional<Employer> employer = employerService.updateEmployer(id, updatedEmployer);
-        return employer.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
 }

@@ -1,7 +1,10 @@
 package com.jobseeking.jobseekingbe.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
@@ -14,8 +17,8 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Candidate extends User {
 
-    @Column(name = "avatar")
-    String avatar;
+    @Column(name = "fullname")
+    String fullName;
 
     @Column(name = "dob")
     Date dob;
@@ -33,7 +36,7 @@ public class Candidate extends User {
     String gender;
 
     @Column(name = "age")
-    int age;
+    String age;
 
     @Column(name = "salary_expect")
     String salaryExpect;
@@ -44,13 +47,10 @@ public class Candidate extends User {
     @Column(name = "linkedin")
     String linkedin;
 
-    @Column(name = "location")
-    String location;
-
     @Builder
-    public Candidate(String email, String password, String phone, Role role, String avatar, Date dob, String position, String currentSalary, String selfDesc, String gender, int age, String salaryExpect, String facebook, String linkedin, String location) {
+    public Candidate(String email, String password, String phone, Role role, String fullName, Date dob, String position, String currentSalary, String selfDesc, String gender, String age, String salaryExpect, String facebook, String linkedin, Province province) {
         super(email, password, phone, role);
-        this.avatar = avatar;
+        this.fullName = fullName;
         this.dob = dob;
         this.position = position;
         this.currentSalary = currentSalary;
@@ -60,6 +60,10 @@ public class Candidate extends User {
         this.salaryExpect = salaryExpect;
         this.facebook = facebook;
         this.linkedin = linkedin;
-        this.location = location;
+        this.province = province;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "pro_id")
+    Province province;
 }

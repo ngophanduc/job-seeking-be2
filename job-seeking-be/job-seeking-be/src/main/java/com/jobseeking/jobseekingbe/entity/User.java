@@ -1,7 +1,9 @@
 package com.jobseeking.jobseekingbe.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Entity(name = "users")
@@ -35,4 +37,8 @@ public abstract class User {
     @ManyToOne
     @JoinColumn(name = "role_id")
     Role role;
+
+    @OneToOne(mappedBy = "user")
+    @PrimaryKeyJoinColumn
+    Avatar avatar;
 }

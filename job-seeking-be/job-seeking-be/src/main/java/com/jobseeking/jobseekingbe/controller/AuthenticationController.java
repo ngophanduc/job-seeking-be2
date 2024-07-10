@@ -1,28 +1,22 @@
-package com.jobseeking.jobseekingbe.controller;
+    package com.jobseeking.jobseekingbe.controller;
 
-import com.jobseeking.jobseekingbe.dto.ApiResponse;
-import com.jobseeking.jobseekingbe.dto.request.AuthenticationRequest;
-import com.jobseeking.jobseekingbe.dto.request.ChangePasswordRequest;
-import com.jobseeking.jobseekingbe.dto.request.IntrospectRequest;
-import com.jobseeking.jobseekingbe.dto.request.ResetPasswordRequest;
-import com.jobseeking.jobseekingbe.dto.response.AuthenticationResponse;
-import com.jobseeking.jobseekingbe.dto.response.ChangePasswordResponse;
-import com.jobseeking.jobseekingbe.dto.response.IntrospectResponse;
-import com.jobseeking.jobseekingbe.entity.User;
-import com.jobseeking.jobseekingbe.service.imp.AuthenticationServiceImp;
-import com.jobseeking.jobseekingbe.service.imp.UserServiceImp;
-import com.nimbusds.jose.JOSEException;
-import jakarta.servlet.ServletContext;
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
-//import lombok.var;
-import org.springframework.web.bind.annotation.*;
+    import com.jobseeking.jobseekingbe.dto.ApiResponse;
+    import com.jobseeking.jobseekingbe.dto.request.AuthenticationRequest;
+    import com.jobseeking.jobseekingbe.dto.request.ChangePasswordRequest;
+    import com.jobseeking.jobseekingbe.dto.request.IntrospectRequest;
+    import com.jobseeking.jobseekingbe.dto.request.ResetPasswordRequest;
+    import com.jobseeking.jobseekingbe.dto.response.AuthenticationResponse;
+    import com.jobseeking.jobseekingbe.dto.response.IntrospectResponse;
+    import com.jobseeking.jobseekingbe.service.imp.AuthenticationServiceImp;
+    import com.nimbusds.jose.JOSEException;
+    import lombok.AccessLevel;
+    import lombok.RequiredArgsConstructor;
+    import lombok.experimental.FieldDefaults;
+    import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.util.UUID;
+    import java.text.ParseException;
 
-@CrossOrigin
+    @CrossOrigin
 @RestController
 @RequestMapping("/auth")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)

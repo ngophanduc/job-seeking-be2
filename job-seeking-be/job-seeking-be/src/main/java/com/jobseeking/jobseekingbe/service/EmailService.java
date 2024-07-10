@@ -1,8 +1,6 @@
 package com.jobseeking.jobseekingbe.service;
 
 
-import com.jobseeking.jobseekingbe.entity.Employer;
-import com.jobseeking.jobseekingbe.service.imp.EmployerServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -11,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class EmailService implements EmployerServiceImp {
+public class EmailService {
 
     @Autowired
     private JavaMailSender mailSender;
@@ -27,8 +25,4 @@ public class EmailService implements EmployerServiceImp {
         mailSender.send(message);
     }
 
-    @Override
-    public Employer getEmployer(String email) {
-        return null;
-    }
 }

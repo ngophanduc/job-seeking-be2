@@ -1,7 +1,6 @@
 package com.jobseeking.jobseekingbe.entity;
 
 import com.jobseeking.jobseekingbe.entity.keys.KeyPostContract;
-import com.jobseeking.jobseekingbe.entity.keys.KeyPostLevel;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
